@@ -179,7 +179,7 @@ label= "NAV"                              ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃  GUI      ┃   ALT     ┃   CTRL    ┃   SHIFT   ┃   RALT    ┃   ┃   PG DN   ┃   LEFT    ┃   DOWN    ┃  RIGHT    ┃   DEL     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃  CUT(Z)   ┃  CUT(X)   ┃  COPY(C)  ┃   TAB     ┃  PASTE(V) ┃   ┃ CUT BSPC  ┃   BSPC    ┃           ┃           ┃           ┃           ┃
+// ┃           ┃  CUT(Z)   ┃  CUT(X)   ┃  COPY(C)  ┃  PASTE(V) ┃   INS     ┃   ┃ CUT BSPC  ┃   BSPC    ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃   CTRL    ┃   ┃   ENTER   ┃    FNC    ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -187,7 +187,7 @@ label= "NAV"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
                 &kp ESC     &trans     &trans      &trans      &trans          &kp PG_UP    &kp HOME    &kp UP      &kp END     &kp CAPS
                 &sk LGUI    &sk LALT   &sk LCTRL   &sk LSHIFT  &kp RALT        &kp PG_DN    &kp LEFT    &kp DOWN    &kp RIGHT   &kp DEL
-    &trans      &kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp TAB     &kp LC(V)       &kp LC(BSPC) &kp BSPC    &trans      &trans      &trans       &trans      
+    &trans      &kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)   &kp INS         &kp LC(BSPC) &kp BSPC    &trans      &trans      &trans       &trans      
                                         &trans     &trans      &kp LCTRL       &kp ENTER    &mo FNC     &trans      
                         >;
                 };

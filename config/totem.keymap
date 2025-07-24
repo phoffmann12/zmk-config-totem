@@ -30,7 +30,26 @@
 #define FNC  3
 #define SETT 4
 
+// -----------------
+/* Global defaults */
+
 #define QUICK_TAP_MS 175
+
+&sk {
+    release-after-ms = <900>;
+    quick-release;
+};
+
+&sl {
+    ignore-modifiers;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
 
 &mt {
   quick-tap-ms = <100>;
@@ -147,7 +166,7 @@ label= "NAV"                              ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃  GUI      ┃   ALT     ┃   CTRL    ┃   SHIFT   ┃   RALT    ┃   ┃   PG DN   ┃   LEFT    ┃   DOWN    ┃  RIGHT    ┃   DEL     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃  CUT(Z)   ┃  CUT(X)   ┃  COPY(C)  ┃   TAB     ┃  PASTE(V) ┃   ┃ CUT BSPC  ┃   BSPC    ┃           ┃           ┃           ┃           ┃
+// ┃           ┃  CUT(Z)   ┃  CUT(X)   ┃  COPY(C)  ┃  PASTE(V) ┃   INS     ┃   ┃ CUT BSPC  ┃   BSPC    ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃   CTRL    ┃   ┃   ENTER   ┃    FNC    ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -155,7 +174,7 @@ label= "NAV"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
                 &kp ESC     &trans     &trans      &trans      &trans          &kp PG_UP    &kp HOME    &kp UP      &kp END     &kp CAPS
                 &sk LGUI    &sk LALT   &sk LCTRL   &sk LSHIFT  &kp RALT        &kp PG_DN    &kp LEFT    &kp DOWN    &kp RIGHT   &kp DEL
-    &trans      &kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp TAB     &kp LC(V)       &kp LC(BSPC) &kp BSPC    &trans      &trans      &trans       &trans      
+    &trans      &kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)   &kp INS         &kp LC(BSPC) &kp BSPC    &trans      &trans      &trans       &trans      
                                         &trans     &trans      &kp LCTRL       &kp ENTER    &mo FNC     &trans      
                         >;
                 };
@@ -174,14 +193,14 @@ label= "SYM"                               ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃    €      ┃    Ü(Q)   ┃    Ö(P)   ┃    Ä(Y)   ┃    ß(S)   ┃   ┃     .     ┃     [     ┃     {     ┃     }     ┃     ]     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃    FNC    ┃   SYM2    ┃   ┃           ┃           ┃           ┃
+//                                     ┃           ┃    FNC    ┃           ┃   ┃           ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
                 &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR
     &trans      &curr_euro  &kp RA(Q)   &kp RA(P)   &kp RA(Y)   &kp RA(S)       &kp DOT     &kp LBRC    &kp LBKT    &kp RBKT    &kp RBRC    &trans      
-                                        &trans      &mo FNC     &mo SYM2        &trans      &trans      &trans      
+                                        &trans      &mo FNC     &trans        &trans      &trans      &trans      
                         >;
                 };
 
@@ -218,7 +237,7 @@ label= "FNC"                               ;
 label= "SETT"                             ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃ BOOTLOAD  ┃           ┃           ┃ BT CLEAR  ┃ BT SEL 0  ┃   ┃ BT SEL 3  ┃           ┃ UNSTICK   ┃           ┃ BOOTLOAD  ┃
+//             ┃ BOOTLOAD  ┃           ┃           ┃ BT CLEAR  ┃ BT SEL 0  ┃   ┃ BT SEL 3  ┃           ┃           ┃           ┃ BOOTLOAD  ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃           ┃           ┃           ┃           ┃ BT SEL 1  ┃   ┃ BT SEL 4  ┃           ┃           ┃           ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
@@ -228,7 +247,7 @@ label= "SETT"                             ;
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-                &bootloader &none       &none       &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 3 &none       &unstick    &none       &bootloader
+                &bootloader &none       &none       &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 3 &none       &none    &none       &bootloader
                 &none       &none       &none       &none       &bt BT_SEL 1    &bt BT_SEL 4 &none       &none       &none       &none
     &none       &none       &none       &none       &none       &bt BT_SEL 2    &bt BT_SEL 5 &none       &none       &none       &none       &none      
                                         &none       &none       &none           &none       &none       &none      

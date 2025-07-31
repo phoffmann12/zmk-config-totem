@@ -29,6 +29,7 @@
 #define SYM  2
 #define FNC  3
 #define SETT 4
+#define SYM2  5
 
 // -----------------
 /* Global defaults */
@@ -143,14 +144,14 @@ label= "BASE"                              ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃   TAB     ┃     Y     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃   ESC     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    DEL    ┃    NAV    ┃  SHFT SPC ┃   ┃   ENTER   ┃    SYM    ┃   BSPC    ┃
+//                                     ┃    DEL    ┃    NAV    ┃  SHFT SPC ┃   ┃ ENT SYM2  ┃    SYM    ┃   BSPC    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Z       &u_minus    &i_equals   &o_quote    &p_bslh
                 &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHFT F &kp G         &kp H       &hmr LSHFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SEMI
     &kp TAB     &kp Y       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp ESC
-                                        &kp DEL     &mo NAV     &hml LSHIFT SPACE &kp ENTER   &sl SYM     &kp BSPC
+                                        &kp DEL     &mo NAV     &hml LSHIFT SPACE &lt SYM2 ENTER   &sl SYM     &kp BSPC
                         >;
                 };
 
@@ -175,7 +176,7 @@ label= "NAV"                              ;
                 &kp ESC     &trans     &trans      &trans      &trans          &kp PG_UP    &kp HOME    &kp UP      &kp END     &kp CAPS
                 &sk LGUI    &sk LALT   &sk LCTRL   &sk LSHIFT  &kp RALT        &kp PG_DN    &kp LEFT    &kp DOWN    &kp RIGHT   &kp DEL
     &trans      &kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)   &kp INS         &kp LC(BSPC) &kp BSPC    &trans      &trans      &trans       &trans      
-                                        &trans     &trans      &kp LCTRL       &kp ENTER    &mo FNC     &trans      
+                                        &trans     &trans      &kp LCTRL       &kp ENTER    &mo FNC     &trans
                         >;
                 };
 
@@ -201,6 +202,31 @@ label= "SYM"                               ;
                 &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR
     &trans      &curr_euro  &kp RA(Q)   &kp RA(P)   &kp RA(Y)   &kp RA(S)       &kp DOT     &kp LBRC    &kp LBKT    &kp RBKT    &kp RBRC    &trans      
                                         &trans      &mo FNC     &trans        &trans      &trans      &trans      
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                sym2_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "SYM2"                               ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃     -     ┃     =     ┃     '     ┃     \     ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+                &none       &none      &none        &none       &none            &none      &kp GRAVE   &none        &none      &none
+                &none       &none      &none        &none       &none            &none      &kp MINUS   &kp EQUAL    &kp SINGLE_QUOTE   &kp NON_US_BACKSLASH
+    &trans      &none       &none      &none        &none       &none            &none      &none       &none        &none      &none        &none
+                                        &none       &none       &none            &none      &none       &none
                         >;
                 };
 

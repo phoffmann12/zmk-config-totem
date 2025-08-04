@@ -244,7 +244,7 @@ label= "SYM2"                               ;
                 &none       &none      &none        &none       &none            &none      &kp GRAVE   &none        &none      &none
                 &none       &none      &none        &none       &none            &none      &kp MINUS   &kp EQUAL    &kp SINGLE_QUOTE   &kp NON_US_BACKSLASH
     &trans      &none       &none      &none        &none       &none            &none      &none       &none        &none      &none        &none
-                                        &none       &none       &none            &none      &none       &none
+                                        &none       &none       &kp LSHIFT            &none      &none       &none
                         >;
                 };
 

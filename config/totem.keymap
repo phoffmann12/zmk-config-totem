@@ -93,7 +93,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
             compatible = "zmk,behavior-tap-dance";
             label = "F5";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <175>;
             bindings = <&kp F5>, <&kp LS(LC(F5))>;
         };
     };
@@ -117,7 +117,7 @@ label= "BASE"                              ;
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-                &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Z       &u_minus    &i_equals   &o_quote    &p_bslh
+                &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Z       &kp U       &kp U       &kp O       &kp P
                 &hml LGUI A &hml LALT S &hml LCTRL D &hml LSHFT F &kp G         &kp H       &hmr LSHFT J &hmr LCTRL K &hmr LALT L &hmr LGUI SEMI
     &kp TAB     &kp Y       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp ESC
                                         &kp DEL     &mo NAV     &hml LSHIFT SPACE &lt SYM2 ENTER   &sl SYM     &kp BSPC

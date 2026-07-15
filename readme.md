@@ -24,7 +24,6 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - `git push` your repo to your fork
 - on the GitHub page of your fork navigate to "Actions"
 - scroll down and unzip the `firmware.zip` archive that contains the latest firmware
-- connect the left half of the TOTEM to your PC, press reset twice
-- the keyboard should now appear as a mass storage device
-- drag'n'drop the `totem_left-seeeduino_xiao_ble-zmk.uf2` file from the archive onto the storage device
-- repeat this process with the right half and the `totem_right-seeeduino_xiao_ble-zmk.uf2` file.
+- flash all three pieces (left half, right half, dongle) one at a time: connect it to your PC, press reset twice so it appears as a mass storage device, then drag'n'drop its matching `.uf2` (`totem_left-...`, `totem_right-...`, `totem_dongle-...`)
+- the dongle stays plugged into your PC as the BLE receiver (central); the two halves run as wireless peripherals
+- the archive also contains `settings_reset-seeeduino_xiao_ble-zmk.uf2` — flash it to a half to clear stored BLE bonds if pairing ever gets stuck

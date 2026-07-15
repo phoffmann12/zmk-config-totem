@@ -13,9 +13,9 @@ manifest:
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: bc114546392b4615ac90a99140eaf21dde31209d
     - name: prospector-zmk-module
       remote: carrefinho
-      revision: main
+      revision: 77a852293532879c992847e01db27abe4f94fa9f
   self:
     path: config

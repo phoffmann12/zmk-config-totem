@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/urob
     - name: carrefinho
       url-base: https://github.com/carrefinho
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,5 +19,8 @@ manifest:
     - name: prospector-zmk-module
       remote: carrefinho
       revision: 77a852293532879c992847e01db27abe4f94fa9f
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
   self:
     path: config

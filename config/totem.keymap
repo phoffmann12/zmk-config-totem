@@ -94,6 +94,23 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
             tapping-term-ms = <175>;
             bindings = <&kp F5>, <&kp LS(LC(F5))>;
         };
+
+        // Alt+Tab window switcher (tri-state / "swapper").
+        // First tap holds LALT and sends TAB; further taps send TAB again.
+        // ALT is released by: a key press outside ignored-key-positions,
+        // activation of a layer outside ignored-layers, or the timeout.
+        // Ignored keys let you steer the KWin task switcher without
+        // dismissing it: the reverse-cycle key (LT2), the arrow cluster,
+        // and the NAV thumb itself.
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <LT1 LT2 RT2 RM1 RM2 RM3 LH1>;
+            ignored-layers = <NAV>;
+            timeout-ms = <1200>;
+        };
     };
 
         keymap {
@@ -132,7 +149,7 @@ label= "NAV"                              ;
 display-name= "NAV";
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃   ESC     ┃           ┃           ┃           ┃           ┃   ┃   PG UP   ┃   HOME    ┃    UP     ┃   END     ┃   CAPS    ┃
+//             ┃   ESC     ┃           ┃  A-S-TAB  ┃  SWAPPER  ┃           ┃   ┃   PG UP   ┃   HOME    ┃    UP     ┃   END     ┃   CAPS    ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃  GUI      ┃   ALT     ┃   CTRL    ┃   SHIFT   ┃   RALT    ┃   ┃   PG DN   ┃   LEFT    ┃   DOWN    ┃  RIGHT    ┃   DEL     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
@@ -142,7 +159,7 @@ display-name= "NAV";
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-                &kp ESC     &trans     &trans      &trans      &trans          &kp PG_UP    &kp HOME    &kp UP      &kp END     &kp CAPS
+                &kp ESC     &trans     &kp LS(TAB) &swapper    &trans          &kp PG_UP    &kp HOME    &kp UP      &kp END     &kp CAPS
                 &sk LGUI    &sk LALT   &sk LCTRL   &sk LSHIFT  &kp RALT        &kp PG_DN    &kp LEFT    &kp DOWN    &kp RIGHT   &kp DEL
     &trans      &kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)   &kp INS         &kp LC(BSPC) &kp BSPC    &trans      &trans      &trans       &trans      
                                         &trans     &trans      &kp LCTRL       &kp ENTER    &mo FNC     &trans
